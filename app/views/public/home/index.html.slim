@@ -1,0 +1,91 @@
+= render 'public/shared/nav'
+
+section.cover.imagebg.height-70.text-center[data-overlay="4"]
+  .background-image-holder
+    img[alt="background" src="img/pexels-photo-325521.jpeg"]
+  .container.pos-vertical-center
+    .row
+      .col-sm-10.col-md-8
+        h1.home-title
+          | Find a healthy place to live
+        p.lead
+          | Search for the healthiest places to live in 
+          span id="changingTitleText"
+        .boxed.boxed--lg.bg--white.text-left
+          form.form--horizontal
+          = form_tag new_search_path, { class: "form form--horizontal" }
+            .col-sm-8
+              = text_field_tag "search", nil, id: "locationSearchField", placeholder: "Start typing a location here"
+              / input[type="text" id="locationSearchField" name="search" placeholder="Start typing a location here"]
+            .col-sm-4
+              = button_to "Search", new_search_path, class: "btn btn--primary type--uppercase", onclick: "mixpanel.track('location search', { value: $('[name=search]')[0].value });" 
+              / button.btn.btn--primary.type--uppercase[type="submit", onclick="mixpanel.track('location search', { value: $("[name=search]")[0].value });"]
+              /   | Search
+section
+  .container
+    .row
+      .col-sm-12
+        .slider.slider--inline-arrows[data-arrows="true"]
+          ul.slides
+            li
+              .row
+                .testimonial
+                  .col-md-2.col-md-offset-1.col-sm-4.col-xs-6.text-center
+                    img.testimonial__image[alt="Image" src="img/margaret-holland-1.jpeg"]
+                  .col-md-7.col-md-offset-1.col-sm-8.col-xs-12
+                    span.h3
+                    p
+                      | “I used Tolenno to find a new family home. For finding healthy places for people with asthma, I cannot recommend it enough!” 
+                    h5
+                      | Margaret Holland
+                    span
+                      | Mother of two
+            li
+              .row
+                .testimonial
+                  .col-md-2.col-md-offset-1.col-sm-4.col-xs-6.text-center
+                    img.testimonial__image[alt="Image" src="img/marcus-jackson-1.jpeg"]
+                  .col-md-7.col-md-offset-1.col-sm-8.col-xs-12
+                    span.h3
+                    p
+                      | “As a Real Estate Agent I've found Tolenno extremely useful. The location reporting is simple and easy to understand so I can show my clients without a hitch.” 
+                    h5
+                      | Marcus Jackson
+                    span
+                      | Real Estate Agent
+section.switchable
+  .container
+    .row
+      .col-sm-7
+        img[alt="Image" src="img/device-with-demo-2.png"]
+      .col-sm-5.col-md-4
+        .switchable__text
+          h3
+            | Simple & Detailed Information
+          p.lead
+            | Tolenno was built knowing that not everyone is a professional data analyst. All location information is simple and easy to understand. If you need a hand understanding ratings, please feel free to 
+            a[href="#"]
+              | reach out
+            |  anytime.
+            br
+            br
+          hr.short
+          p
+            | The picture on the left is a demonstration and is not the real score for New York.
+section.text-center
+  .container
+    .row
+      form[action="//mrare.us8.list-manage.com/subscribe/post?u=77142ece814d3cff52058a51f&amp;id=f300c9cce8" data-success="Thanks for signing up.  Please check your inbox for a confirmation email." data-error="Please provide your email address and agree to the terms."]
+        .col-md-6.col-md-offset-2.col-sm-8
+          input.validate-required.validate-email[type="text" name="EMAIL" placeholder="Enter your email to learn more about Tolenno", onclick="mixpanel.track('newsletter signup click');"]
+        .col-md-2.col-sm-4
+          button.btn.btn--primary[type="submit"]
+            | Learn More
+        .col-sm-12
+          input.validate-required[type="checkbox" name="group[13737][1]"]
+          span
+            | Sign me up for weekly updates!
+        / div[aria-hidden="true"]
+        /   input[type="text" name="b_77142ece814d3cff52058a51f_f300c9cce8" tabindex="-1" value=""]
+
+= render 'public/shared/footer'

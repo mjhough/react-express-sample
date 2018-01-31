@@ -1,0 +1,23 @@
+doctype html
+html lang="en"
+  head
+    title
+      | Tolenno
+    meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no, minimal-ui"
+
+    = render 'shared/favicon'
+    = yield :meta
+
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700"
+  body.app
+    = render 'shared/nav'
+    - if content_for? :nav
+      = yield :nav
+    - else
+      = render 'shared/nav'
+    .container
+      = render 'shared/flash'
+      = yield
+    = yield :scripts

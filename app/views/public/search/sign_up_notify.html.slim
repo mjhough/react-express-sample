@@ -1,0 +1,21 @@
+section.height-100.bg--dark.text-center
+        .container.pos-vertical-center
+          .row
+            .col-sm-12
+              h1.h1--large
+                | Sorry :(
+              p.lead
+                |  Tolenno is currently in private beta. You must register to gain access
+              br
+            .col-sm-6.col-sm-offset-3
+              = form_tag "#{root_path}#thanks", method: 'get'
+                .row
+                  .col-xs-12
+                    = email_field_tag "Email Address", nil, placeholder: "Your email address here"
+                  .col-xs-12
+                    = submit_tag "Register", class: "btn btn--primary"
+                  .col-xs-12
+                    span.type--fine-print
+                      | By signing up, you agree to the 
+                      a[href="#"]
+                        | Terms of Service
