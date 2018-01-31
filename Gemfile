@@ -12,6 +12,8 @@ gem 'rails', '~> 5.1.4'
 gem 'sass-rails', '~> 5.0'
 
 gem 'slim-rails'
+
+gem 'sqlite3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -43,7 +45,6 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'sqlite3'
   gem 'puma'
 end
 
