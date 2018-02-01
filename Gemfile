@@ -34,10 +34,8 @@ gem 'jquery-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'pg'
-
 group :production do
-  # gem 'pg'
+  gem 'pg', '~> 0.18'
   gem 'unicorn'
 end
 
