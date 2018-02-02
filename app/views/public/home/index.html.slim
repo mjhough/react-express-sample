@@ -16,11 +16,8 @@ section.cover.imagebg.height-70.text-center[data-overlay="4"]
           = form_tag new_search_path, { class: "form form--horizontal" }
             .col-sm-8
               = text_field_tag "search", nil, id: "locationSearchField", placeholder: "Start typing a location here"
-              / input[type="text" id="locationSearchField" name="search" placeholder="Start typing a location here"]
             .col-sm-4
               = button_to "Search", new_search_path, class: "btn btn--primary type--uppercase", onclick: "mixpanel.track('location search', { value: $('[name=search]')[0].value });" 
-              / button.btn.btn--primary.type--uppercase[type="submit", onclick="mixpanel.track('location search', { value: $("[name=search]")[0].value });"]
-              /   | Search
 section
   .container
     .row
