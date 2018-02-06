@@ -28,3 +28,7 @@
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+# Mac Crap
+*/.DS_Store
+.DS_Store

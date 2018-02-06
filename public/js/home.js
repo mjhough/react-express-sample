@@ -1,12 +1,11 @@
-var text = ["Sydney", "Prague", "Aspen", "Tokyo", "Perth", "Denver"];
-var counter = 0;
-var elem = document.getElementById("changingTitleText");
+const cities = ["Sydney", "Prague", "Aspen", "Tokyo", "Perth", "Denver"];
+let counter = 0;
 setInterval(change, 1000);
 
 function change() {
-  elem.innerHTML = text[counter];
+  $('#changingTitleText').text(cities[counter]);
   counter++;
-  if (counter >= text.length) {
+  if (counter >= cities.length) {
     counter = 0;
   }
 }

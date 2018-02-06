@@ -22,15 +22,15 @@
             .bar__module
               ul.menu-horizontal.text-left
                 li
-                  a[href="#", onclick="mixpanel.track('help button click');"]
+                  a[href="#", onclick="analytics.track('help button click');"]
                     |  Help
                 li
-                  a[href="#", onclick="mixpanel.track('demo button click');"]
+                  a[href="#", onclick="analytics.track('demo button click');"]
                     | Demo
             .bar__module
-              a.btn.btn--sm.type--uppercase[href="#customise-template", onclick="mixpanel.track('login button click');"]
+              a.btn.btn--sm.type--uppercase[href="#customise-template", onclick="analytics.track('login button click');"]
                 span.btn__text
                   | Login
-              a.btn.btn--sm.btn--primary.type--uppercase[href="#purchase-template", onclick="mixpanel.track('signup button click');"]
+              a.btn.btn--sm.btn--primary.type--uppercase[href="#purchase-template", onclick="analytics.track('signup button click');"]
                 span.btn__text
                   |  Sign Up

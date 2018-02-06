@@ -8,15 +8,32 @@ section.height-100.bg--dark.text-center
                 |  Tolenno is currently in private beta. You must register to gain access
               br
             .col-sm-6.col-sm-offset-3
-              = form_tag 'https://tolenno.us16.list-manage.com/subscribe/post?u=4bf874ce5d4ecb60a37230f58&amp;id=e44a786c7d', data: {success: 'thanks for signing up.  you will receive an email soon with more information.', error: 'please provide an email address.'}, novalidate: true
+              = form_tag 'https://www.getdrip.com/forms/640442568/submissions', data: {success: 'thanks for signing up.  you will receive an email soon with more information.', error: 'please provide an email address.', 'drip-embedded-form': '640442568' }, novalidate: true
                 .row
                   .col-xs-12
-                    = email_field_tag 'EMAIL', nil, placeholder: 'Your email address here', class: 'validate-required validate-email'
+                    = hidden_field_tag 'headline', 'Beta Signup', data: { 'drip-attribute': 'headline' }
+                    = email_field_tag 'fields[email]', nil, id: 'drip-email', placeholder: 'Your email address here', class: 'validate-required validate-email'
                   .col-xs-12
-                    = submit_tag 'Register', class: 'btn btn--primary'
+                    = submit_tag 'Register', class: 'btn btn--primary', data: { 'drip-attribute': 'sign-up-button' }
                     = hidden_field_tag 'b_77142ece814d3cff52058a51f_f300c9cce8', '', tabIndex: '-1'
                   .col-xs-12
                     span.type--fine-print
                       | By signing up, you agree to the 
                       a[href="#"]
                         | Terms of Service
+
+
+javascript:
+  analytics.page('Search');
+  analytics.track('Location Search', {
+    search: "#{{params[:search]}}"
+  });
+
+  $('form').submit(function(event) {
+    let id = "#{{session[:id]}}";
+    let email = $('input[name=EMAIL]').val();
+    analytics.identify("#{{session[:id]}}", {
+      email: email
+    });
+    analytics.track('Beta Signup');
+  });

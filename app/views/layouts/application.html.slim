@@ -9,6 +9,7 @@ html lang="en"
     = yield :meta
 
     = csrf_meta_tags
+    = javascript_include_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700"
   body.app

@@ -1,4 +1,5 @@
 = render 'public/shared/nav'
+script[src="js/home.js"]
 
 section.cover.imagebg.height-70.text-center[data-overlay="4"]
   .background-image-holder
@@ -17,7 +18,7 @@ section.cover.imagebg.height-70.text-center[data-overlay="4"]
             .col-sm-8
               = text_field_tag "search", nil, id: "locationSearchField", placeholder: "Start typing a location here"
             .col-sm-4
-              = button_to "Search", new_search_path, class: "btn btn--primary type--uppercase", onclick: "mixpanel.track('location search', { value: $('[name=search]')[0].value });" 
+              = button_to "Search", new_search_path, class: "btn btn--primary type--uppercase" 
 section
   .container
     .row
@@ -60,7 +61,7 @@ section.switchable
           h3
             | Simple & Detailed Information
           p.lead
-            | Tolenno was built knowing that not everyone is a professional data analyst. All location information is simple and easy to understand. If you need a hand understanding ratings, please feel free to 
+            | Tolenno was built knowing that not everyone is a professional data analyst. All location information is simple and easy to understand. If you need a hand understanding ratings, please 
             a[href="#"]
               | reach out
             |  anytime.
@@ -72,15 +73,28 @@ section.switchable
 section.text-center
   .container
     .row
-      form[action="https://tolenno.us16.list-manage.com/subscribe/post?u=4bf874ce5d4ecb60a37230f58&amp;id=e44a786c7d" data-success="Thanks for signing up.  Please check your inbox for a confirmation email." data-error="Please provide your email address and agree to the terms." novalidate]
+      = form_tag 'https://www.getdrip.com/forms/75068840/submissions', data: {success: 'thanks for signing up.  you will receive an email soon with more information.', error: 'please provide an email address.', 'drip-embedded-form': '75068840' }, novalidate: true
         .col-md-6.col-md-offset-2.col-sm-8
-          input.validate-required.validate-email[type="text" name="EMAIL" placeholder="Enter your email to learn more about Tolenno", onclick="mixpanel.track('newsletter signup click');" required]
+          = email_field_tag 'fields[email]', nil, id: 'drip-email', placeholder: 'Enter your email to learn more about Tolenno', class: 'validate-required validate-email'
         .col-md-2.col-sm-4
-          button.btn.btn--primary[type="submit"]
-            | Learn More
-        .col-sm-12
-          input.validate-required[type="checkbox" name="group[13737][1]"]
-          span
-            | I agree to get the awesome newsletter!
+          = submit_tag 'Learn More', class: 'btn btn--primary', data: { 'drip-attribute': 'sign-up-button' }
+          = hidden_field_tag 'headline', 'Newsletter Signup', data: { 'drip-attribute': 'headline' }
+        .col-xs-12
+          span.type--fine-print
+            | By signing up, you agree to receive occasional awesome emails
+
 
 = render 'public/shared/footer'
+
+
+javascript:
+  analytics.page('Home');
+
+  $('#home-signup').submit(function(event) {
+    let id = "#{{session[:id]}}";
+    let email = $('input[name=EMAIL]').val();
+    analytics.identify("#{{session[:id]}}", {
+      email: email
+    });
+    analytics.track('Newsletter Signup');
+  });
