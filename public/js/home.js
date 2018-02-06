@@ -1,4 +1,4 @@
-const cities = ["Sydney", "Prague", "Aspen", "Tokyo", "Perth", "Denver"];
+var cities = ["Sydney", "Prague", "Aspen", "Tokyo", "Perth", "Denver"];
 var counter = 0;
 setInterval(change, 1000);
 
