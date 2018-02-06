@@ -1,5 +1,5 @@
 const cities = ["Sydney", "Prague", "Aspen", "Tokyo", "Perth", "Denver"];
-let counter = 0;
+var counter = 0;
 setInterval(change, 1000);
 
 function change() {
