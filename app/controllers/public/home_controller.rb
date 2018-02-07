@@ -1,6 +1,6 @@
 module Public
   class HomeController < BaseController
-    before_action :has_email_param
+    before_action :has_email_param, except: :index
 
     def index; end
 
@@ -34,7 +34,7 @@ module Public
     private
 
     def has_email_param
-      byebug
+      redirect_to root_path unless params[:email]
     end
 
   end
