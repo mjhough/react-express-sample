@@ -8,6 +8,7 @@ module Public
       @header_text =  'Great! Now what?'
       @body_text =  'Please confirm your email address to get started.'
       @button_text =  'Go Back To Tolenno'
+      @button_link = '/'
       @excited =  true
 
       render 'message'
@@ -17,6 +18,7 @@ module Public
       @header_text =  'You did it!'
       @body_text =  'You can now login to the Tolenno Beta Program'
       @button_text =  'Login to Tolenno Beta'
+      @button_link = 'http://beta.tolenno.com/login'
       @excited =  false
 
       render 'message'
@@ -27,6 +29,7 @@ module Public
       @body_text = "You're now signed up to Tolenno news!"
       @button_text =  'Go Back To Tolenno'
       @excited =  false
+      @button_link = '/'
 
       render 'message'
     end
