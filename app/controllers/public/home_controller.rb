@@ -34,7 +34,7 @@ module Public
     private
 
     def has_email_param
-      redirect_to root_path unless params[:email]
+      redirect_to root_path unless params[:drip_email]
     end
 
   end
