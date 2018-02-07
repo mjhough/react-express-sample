@@ -1,5 +1,7 @@
 module Public
   class HomeController < BaseController
+    before_action :has_email_param
+
     def index; end
 
     def email_confirm
@@ -28,5 +30,12 @@ module Public
 
       render 'message'
     end
+
+    private
+
+    def has_email_param
+      raise params.inspect
+    end
+
   end
 end
