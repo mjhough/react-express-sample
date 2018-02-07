@@ -19,6 +19,7 @@ section.cover.imagebg.height-70.text-center[data-overlay="4"]
               = text_field_tag "search", nil, id: "locationSearchField", placeholder: "Start typing a location here"
             .col-sm-4
               = button_to "Search", new_search_path, class: "btn btn--primary type--uppercase" 
+
 section
   .container
     .row
@@ -85,7 +86,7 @@ section.text-center
 
 
 = render 'public/shared/footer'
-
+/ = render 'modals'
 
 javascript:
   analytics.page('Home');
