@@ -34,7 +34,7 @@ module Public
     private
 
     def has_email_param
-      raise params.inspect
+      byebug
     end
 
   end
