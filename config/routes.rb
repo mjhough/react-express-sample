@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get '/email-confirm', to: 'public/home#email_confirm'
   get '/beta-success', to: 'public/home#beta_success'
   get '/newsletter-success', to: 'public/home#newsletter_success'
+  get '/login', to: 'public/home#login'
+  get '/signup', to: 'public/home#signup'
 end

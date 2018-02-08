@@ -1,8 +1,12 @@
 module Public
   class HomeController < BaseController
-    before_action :has_email_param, except: :index
+    before_action :has_email_param, only: %i(email_confirm beta_success newsletter_success)
 
     def index; end
+
+    def login; end
+
+    def signup; end
 
     def email_confirm
       @header_text =  'Great! Now what?'

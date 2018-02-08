@@ -1,0 +1,26 @@
+section.switchable
+  .container
+    .row
+      .col-sm-6.col-md-5
+        .mt--3
+          h1
+            | Sign up to Tolenno
+          p.lead
+            |  Start changing your life today — right in the comfort of your browser. 
+          hr.short
+          form
+            .row
+              .col-xs-12
+                input[type="email" name="Email Address" placeholder="Email Address"]
+              .col-xs-12
+                input[type="password" name="Password" placeholder="Password"]
+              .col-xs-12
+                button.btn.btn--primary[type="submit"]
+                  | Create Account
+              .col-xs-12
+                span.type--fine-print
+                  | Already have an account? 
+                  a[href="#{login_path}"]
+                    | Log In
+      .col-sm-6.col-md-5
+        img.border--round.box-shadow-wide[alt="Image" src="img/pexels-photo-439857.jpeg"]
