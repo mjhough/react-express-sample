@@ -18,7 +18,7 @@ module Public
       @header_text =  'You did it!'
       @body_text =  'You can now login to the Tolenno Beta Program'
       @button_text =  'Login to Tolenno Beta'
-      @button_link = 'http://beta.tolenno.com/login'
+      @button_link = 'http://tolenno.com/login'
       @excited =  false
 
       render 'message'
