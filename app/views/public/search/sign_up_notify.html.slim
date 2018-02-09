@@ -6,8 +6,6 @@ section.height-100.bg--dark.text-center
                 | Sorry :(
               p.lead
                 |  Tolenno is currently in private beta. You must register to gain access
-              span.type--fine-print
-                | AQI: #{@aqi}
               br
             .col-sm-6.col-sm-offset-3
               = form_tag 'https://www.getdrip.com/forms/640442568/submissions', data: {success: 'thanks for signing up.  you will receive an email soon with more information.', error: 'please provide an email address.', 'drip-embedded-form': '640442568' }, novalidate: true
