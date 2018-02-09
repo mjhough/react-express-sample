@@ -29,6 +29,8 @@ javascript:
     search: "#{{params[:search]}}"
   });
 
+  console.log(`Psst! The air quality is ${#{{@aqi}}}.`);
+
   $('form').submit(function(event) {
     let id = "#{{session[:id]}}";
     let email = $('input[name=EMAIL]').val();
@@ -37,3 +39,4 @@ javascript:
     });
     analytics.track('Beta Signup');
   });
+

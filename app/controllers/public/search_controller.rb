@@ -1,7 +1,8 @@
 module Public
   class SearchController < BaseController
     def new
-      @aqi = AirQualityService.new(lat: '-27.496999', long: '153.089334').get_aqi
+      lat_lng = GoogleService.new.get_lat_lng(params[:search])
+      @aqi = AirQualityService.new(lat_lng).get_aqi
       @user_email = params[:'Email Address']
       render 'sign_up_notify'
 
