@@ -1,6 +1,8 @@
 module Public
   class SearchController < BaseController
     def new
+      @aqi = AirQualityService.new(lat: '-27.496999', long: '153.089334').get_aqi
+      @user_email = params[:'Email Address']
       render 'sign_up_notify'
 
       # 1. Geocode the input

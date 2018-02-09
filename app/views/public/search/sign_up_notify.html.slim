@@ -12,7 +12,7 @@ section.height-100.bg--dark.text-center
                 .row
                   .col-xs-12
                     = hidden_field_tag 'headline', 'Beta Signup', data: { 'drip-attribute': 'headline' }
-                    = email_field_tag 'fields[email]', nil, id: 'drip-email', placeholder: 'Your email address here', class: 'validate-required validate-email'
+                    = email_field_tag 'fields[email]', @user_email, id: 'drip-email', placeholder: 'Your email address here', class: 'validate-required validate-email'
                   .col-xs-12
                     = submit_tag 'Register', class: 'btn btn--primary', data: { 'drip-attribute': 'sign-up-button' }
                     = hidden_field_tag 'b_77142ece814d3cff52058a51f_f300c9cce8', '', tabIndex: '-1'

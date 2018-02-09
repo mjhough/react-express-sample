@@ -8,12 +8,14 @@ section.switchable
           p.lead
             |  Start changing your life today — right in the comfort of your browser. 
           hr.short
-          form
+          = form_tag new_search_path
             .row
               .col-xs-12
                 input[type="email" name="Email Address" placeholder="Email Address"]
               .col-xs-12
-                input[type="password" name="Password" placeholder="Password"]
+                input[type="password" name="password" placeholder="Password"]
+              .col-xs-12
+                input[type="password" name="password_confirm" placeholder="Password Confirmation"]
               .col-xs-12
                 button.btn.btn--primary[type="submit"]
                   | Create Account

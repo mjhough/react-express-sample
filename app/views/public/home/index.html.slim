@@ -13,7 +13,6 @@ section.cover.imagebg.height-70.text-center[data-overlay="4"]
           | Search for the healthiest places to live in 
           span id="changingTitleText"
         .boxed.boxed--lg.bg--white.text-left
-          form.form--horizontal
           = form_tag new_search_path, { class: "form form--horizontal" }
             .col-sm-8
               = text_field_tag "search", nil, id: "locationSearchField", placeholder: "Start typing a location here"
