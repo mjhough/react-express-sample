@@ -29,7 +29,7 @@ javascript:
     search: "#{{params[:search]}}"
   });
 
-  console.log(`Psst! The air quality is ${#{{@aqi}}}.`);
+  console.log(`Psst! The air quality is ${#{{@aqi}}}/300. Lower is better.`);
 
   $('form').submit(function(event) {
     let id = "#{{session[:id]}}";
