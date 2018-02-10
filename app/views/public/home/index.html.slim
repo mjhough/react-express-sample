@@ -92,7 +92,7 @@ javascript:
 
   $('#home-signup').submit(function(event) {
     let id = "#{{session[:id]}}";
-    let email = $('input[name=EMAIL]').val();
+    let email = $('#drip-email').val();
     analytics.identify("#{{session[:id]}}", {
       email: email
     });
