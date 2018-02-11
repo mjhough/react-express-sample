@@ -13,3 +13,7 @@ section.cover.height-100.text-center
           p
             span.type--fine-print
               | You should be excited!
+
+
+  javascript:
+    if("#{@event}") analytics.track("#{@event}");

@@ -73,7 +73,7 @@ section.switchable
 section.text-center
   .container
     .row
-      = form_tag 'https://www.getdrip.com/forms/75068840/submissions', data: {success: 'thanks for signing up.  you will receive an email soon with more information.', error: 'please provide an email address.', 'drip-embedded-form': '75068840' }, novalidate: true
+      = form_tag 'https://www.getdrip.com/forms/75068840/submissions', data: {success: 'thanks for signing up.  you will receive an email soon with more information.', error: 'please provide an email address.', 'drip-embedded-form': '75068840' }, novalidate: true, id: 'newsletter-signup'
         .col-md-6.col-md-offset-2.col-sm-8
           = email_field_tag 'fields[email]', nil, id: 'drip-email', placeholder: 'Enter your email to learn more about Tolenno', class: 'validate-required validate-email'
         .col-md-2.col-sm-4
@@ -88,13 +88,15 @@ section.text-center
 / = render 'modals'
 
 javascript:
-  analytics.page('Home');
+  analytics.track('Page View', {
+    page: 'Home'
+  });
 
-  $('#home-signup').submit(function(event) {
+  $('#newsletter-signup').submit(function(event) {
     let id = "#{{session[:id]}}";
     let email = $('#drip-email').val();
     analytics.identify("#{{session[:id]}}", {
       email: email
     });
-    analytics.track('Newsletter Signup');
+    analytics.track('Clicked newsletter signup');
   });

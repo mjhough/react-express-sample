@@ -25,7 +25,12 @@ section.height-100.bg--dark.text-center
 
 javascript:
   analytics.page('Search');
-  analytics.track('Location Search', {
+  
+  analytics.track('Page View', {
+    page: 'Beta Signup'
+  });
+
+  analytics.track('Clicked location search', {
     search: "#{{params[:search]}}"
   });
 
@@ -37,6 +42,5 @@ javascript:
     analytics.identify("#{{session[:id]}}", {
       email: email
     });
-    analytics.track('Beta Signup');
+    analytics.track('Clicked beta signup');
   });
-

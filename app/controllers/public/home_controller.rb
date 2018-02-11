@@ -24,6 +24,7 @@ module Public
       @button_text =  'Login to Tolenno Beta'
       @button_link = 'http://tolenno.com/login'
       @excited =  false
+      @event = 'Confirmed beta email'
 
       render 'message'
     end
@@ -34,6 +35,7 @@ module Public
       @button_text =  'Go Back To Tolenno'
       @excited =  false
       @button_link = '/'
+      @event = 'Confirmed newsletter email'
 
       render 'message'
     end
