@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup' }
 
-  get '/sitemap.xml.gz', to: redirect('https://s3-us-east-1.amazonaws.com/tolenno/sitemap.xml.gz')
+  get '/sitemap.xml.gz', to: redirect('https://s3.amazonaws.com/tolenno-assets/sitemap.xml.gz')
 end
