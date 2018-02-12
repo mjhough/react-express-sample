@@ -6,8 +6,11 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bootstrap'
+gem 'devise'
 gem 'dotenv-rails'
 gem 'faraday'
+gem 'fog-aws'
+gem 'mime-types'
 gem 'rails', '~> 5.1.4'
 gem 'sass-rails', '~> 5.0'
 gem 'slim-rails'
@@ -18,6 +21,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'pg'
 gem 'puma'
+gem 'sitemap_generator'
 
 
 group :development, :test do

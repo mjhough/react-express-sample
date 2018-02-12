@@ -4,7 +4,7 @@
       .container
         .row
           .col-xs-3.col-sm-2
-            a[href="index.html"]
+            = link_to root_path
               img.logo.logo-dark[alt="logo" src="img/logo-dark.png"]
               img.logo.logo-light[alt="logo" src="img/logo-light.png"]
           .col-xs-9.col-sm-10.text-right
@@ -15,22 +15,22 @@
         .row
           .col-md-1.col-sm-2.hidden-xs
             .bar__module
-              a[href="index.html"]
-                img.logo.logo-dark[alt="logo" src="img/word-logo.png"]
+              = link_to root_path
+                img.logo.logo-dark[alt="logo" src="img/logo-dark.png"]
                 img.logo.logo-light[alt="logo" src="img/logo-light.png"]
           .col-md-11.col-sm-12.text-right.text-left-xs.text-left-sm
             .bar__module
               ul.menu-horizontal.text-left
                 li
-                  a[href="#"]
+                  a[href="#", onclick="analytics.track('help button click');"]
                     |  Help
                 li
-                  a[href="#"]
+                  a[href="#", onclick="analytics.track('demo button click');"]
                     | Demo
             .bar__module
-              a.btn.btn--sm.type--uppercase[href="#customise-template"]
+              a.btn.btn--sm.type--uppercase[href="#{new_user_session_path}", onclick="analytics.track('login button click');"]
                 span.btn__text
                   | Login
-              a.btn.btn--sm.btn--primary.type--uppercase[href="#purchase-template"]
+              a.btn.btn--sm.btn--primary.type--uppercase[href="#{new_user_registration_path}", onclick="analytics.track('signup button click');"]
                 span.btn__text
                   |  Sign Up

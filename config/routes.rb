@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/email-confirm', to: 'public/home#email_confirm'
   get '/beta-success', to: 'public/home#beta_success'
   get '/newsletter-success', to: 'public/home#newsletter_success'
-  get '/login', to: 'public/home#login'
-  get '/signup', to: 'public/home#signup'
+  
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup' }
+
+  get '/sitemap.xml.gz', to: redirect('https://s3-us-east-1.amazonaws.com/tolenno/sitemap.xml.gz')
 end

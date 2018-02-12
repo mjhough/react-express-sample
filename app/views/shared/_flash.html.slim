@@ -1,33 +1,24 @@
 -if flash[:notice]
-  .alert.alert-info.alert-dismissible
-    button.close type="button" data-dismiss="alert"
-      span aria-hidden='true' &times;
-      span.sr-only Close
-    = flash[:notice]
+  = byebug
+  .alert.bg--primary
+    .alert__body
+      span
+        = flash[:notice]
 
 -if flash[:success]
-  .alert.alert-success.alert-dismissible
-    button.close type="button" data-dismiss="alert"
-      span aria-hidden='true' &times;
-      span.sr-only Close
-    strong Success!
-    | &#160;
-    = flash[:success]
-
--if flash[:error]
-  .alert.alert-danger.alert-dismissible.animated.bounce
-    button.close type="button" data-dismiss="alert"
-      span aria-hidden='true' &times;
-      span.sr-only Close
-    strong Oh snap!
-    | &#160;
-    = flash[:error]
+  .alert.bg--success
+    .alert__body
+      span
+        strong Success!
+        | &#160;
+        = flash[:success]
 
 -if flash[:alert]
-  .alert.alert-warning.alert-dismissible.animated.bounce
-    button.close type="button" data-dismiss="alert"
-      span aria-hidden='true' &times;
-      span.sr-only Close
-    strong Warning!
-    | &#160;
-    = flash[:alert]
+  .alert.bg--error
+    .alert__body
+      span
+        strong Warning!
+        | &#160;
+        = flash[:alert]
+    .alert__close
+      | &times;

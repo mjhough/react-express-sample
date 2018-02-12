@@ -2,12 +2,6 @@ module Public
   class HomeController < BaseController
     before_action :has_email_param, only: %i(email_confirm beta_success newsletter_success)
 
-    def index; end
-
-    def login; end
-
-    def signup; end
-
     def email_confirm
       @header_text =  'Great! Now what?'
       @body_text =  'Please confirm your email address to get started.'
@@ -22,7 +16,7 @@ module Public
       @header_text =  'You did it!'
       @body_text =  'You can now login to the Tolenno Beta Program'
       @button_text =  'Login to Tolenno Beta'
-      @button_link = 'http://tolenno.com/login'
+      @button_link = 'https://tolenno.com/login'
       @excited =  false
       @event = 'Confirmed beta email'
 
