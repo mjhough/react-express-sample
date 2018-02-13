@@ -36,7 +36,7 @@ javascript:
 
   console.log(`Psst! The air quality is ${#{{@aqi}}}/300. Lower is better.`);
 
-  $('form').submit() => {
+  $('form').submit(() => {
     let id = "#{{session[:id]}}";
     let email = $('#drip-email').val();
     analytics.identify("#{{session[:id]}}", {
