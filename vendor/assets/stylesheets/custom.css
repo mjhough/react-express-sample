@@ -21,3 +21,11 @@
 form + form {
   margin-top: 0px;
 }
+
+.close-button {
+  position: absolute;
+  left: 45px;
+  top: 35px;
+  font-size: 130%;
+  color: rgba(252, 53, 63, 100);
+}
