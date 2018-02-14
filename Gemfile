@@ -7,6 +7,7 @@ end
 
 gem 'bootstrap'
 gem 'devise'
+gem 'devise-async'
 gem 'dotenv-rails'
 gem 'faraday'
 gem 'fog-aws'
@@ -22,6 +23,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'pg'
 gem 'puma'
+gem 'sidekiq'
 gem 'sitemap_generator'
 
 
