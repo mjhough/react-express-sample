@@ -8,7 +8,9 @@ Rails.application.configure do
     user_name:    ENV['SMTP_LOGIN'],
     password:     ENV['SMTP_PASSWORD'],
     domain:       'tolenno.com',
-    authentication: :plain
+    authentication: :plain,
+    ssl: true,
+    tls: true
   }
   ActionMailer::Base.delivery_method = :smtp
 
