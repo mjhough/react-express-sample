@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/beta-success', to: 'public/home#beta_success'
   get '/newsletter-success', to: 'public/home#newsletter_success'
 
-  get '/beta/signup', to: 'public/home#beta_signup'
+  get '/beta', to: 'public/home#beta_signup'
   
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup' }
 
