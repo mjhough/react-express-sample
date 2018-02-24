@@ -34,6 +34,10 @@ module Public
       render 'message'
     end
 
+    def beta_signup
+
+    end
+
     private
 
     def has_email_param
