@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: postgresql
+  adapter: postgis
   encoding: unicode
   username: <%= ENV.fetch('RDS_USERNAME') { 'postgres' } %>
   password:
