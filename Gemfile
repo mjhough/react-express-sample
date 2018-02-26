@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'activerecord-postgis-adapter'
 gem 'bootstrap'
 gem 'devise'
 gem 'devise-async'
@@ -32,7 +33,6 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'mailcatcher'
   gem 'selenium-webdriver'
-  gem 'sqlite3'
 end
 
 group :development do
