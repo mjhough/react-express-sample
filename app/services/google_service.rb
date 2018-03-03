@@ -14,7 +14,25 @@ class GoogleService
     lat_lng
   end
 
+  def get_all_elevations
+    points = get_points
+    points.map do |point|
+      response = Faraday.get("https://maps.googleapis.com/maps/api/elevation/json?locations=#{delimited_points}&key=#{token}")
+      JSON.parse(response.body)['results'][0]['elevation']
+    end
+    byebug
+  end
+
   protected
+
+  def delimited_points
+    points.each do |point|
+    end
+  end
+
+  def get_points
+    GeographicService.find_all_points(lat, lng, 500, 6)
+  end
 
   attr_reader :token
   attr_accessor :lat, :lng

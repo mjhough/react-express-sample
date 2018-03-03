@@ -12,6 +12,7 @@ gem 'devise-async'
 gem 'dotenv-rails'
 gem 'faraday'
 gem 'fog-aws'
+gem 'geographiclib'
 gem 'font-awesome-sass', '~> 5.0.6'
 gem 'mime-types'
 gem 'rails', '~> 5.1.4'
@@ -32,6 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'mailcatcher'
+  gem 'rspec-rails'
   gem 'selenium-webdriver'
 end
 
