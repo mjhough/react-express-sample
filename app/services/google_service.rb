@@ -16,19 +16,15 @@ class GoogleService
 
   def get_all_elevations
     points = get_points
-    points.map do |point|
-      response = Faraday.get("https://maps.googleapis.com/maps/api/elevation/json?locations=#{delimited_points}&key=#{token}")
-      JSON.parse(response.body)['results'][0]['elevation']
+    all_split_points = points.map { |point| "#{point[:lat2]},#{point[:lon2]}" }.each_slice(52).to_a
+
+    all_split_points.map do |split_points|
+      response = Faraday.get("https://maps.googleapis.com/maps/api/elevation/json?locations=#{split_points.join('|')}&key=#{token}")
+      JSON.parse(response.body)['results'].map { |result| result['elevation'] }
     end
-    byebug
   end
 
   protected
-
-  def delimited_points
-    points.each do |point|
-    end
-  end
 
   def get_points
     GeographicService.find_all_points(lat, lng, 500, 6)
