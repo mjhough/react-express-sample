@@ -27,6 +27,7 @@ gem 'pg'
 gem 'puma'
 gem 'sidekiq'
 gem 'sitemap_generator'
+gem 'typhoeus'
 
 
 group :development, :test do
