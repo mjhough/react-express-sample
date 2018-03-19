@@ -39,7 +39,7 @@ class GoogleService
   protected
 
   def get_points
-    GeographicService.find_all_points(lat, lng, 500, 6)
+    GeographicService.find_all_points(lat, lng, 400, 5)
   end
 
   attr_reader :token
