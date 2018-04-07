@@ -5,7 +5,10 @@ class SearchController < SecureController
   end
 
   def new
-    lat_lng = GoogleService.new.get_lat_lng(params[:search])
+    byebug
+    google_service = GoogleService.new
+    lat_lng = google_service.get_lat_lng(params[:search])
+    @hill_score = google_service.get_diff(google_service.get_all_elevations)
     @aqi = AirQualityService.new(lat_lng).get_aqi
     @user_email = params[:'Email Address']
     render 'sign_up_notify'
@@ -18,6 +21,6 @@ class SearchController < SecureController
   protected
 
   def final_result(greenspace_score, pollution_score, healthcare_score)
-    
+   
   end
 end
