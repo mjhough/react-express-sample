@@ -5,8 +5,8 @@ class GoogleService
     @token = token
   end
 
-  def get_diff(points)
-    points.max - points.min 
+  def get_hilliness(points)
+    (points.max - points.min) / 500 * 100
   end
 
   def get_lat_lng(address)

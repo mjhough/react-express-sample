@@ -5,15 +5,15 @@ Rails.application.routes.draw do
   get '/beta-success', to: 'public/home#beta_success'
   get '/newsletter-success', to: 'public/home#newsletter_success'
 
-  get '/beta', to: 'public/home#beta_signup'
+  # get '/beta', to: 'public/home#beta_signup'
   
-  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup' }
+  # devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup' }
 
   get '/sitemap.xml.gz', to: redirect('https://s3.amazonaws.com/tolenno-assets/sitemap.xml.gz')
 
-  authenticated :user do
-    root 'search#show', as: :authenticated_root
-  end
+  # authenticated :user do
+  #   root 'search#show', as: :authenticated_root
+  # end
 
   root to: 'public/home#index'
 end

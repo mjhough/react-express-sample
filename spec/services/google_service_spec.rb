@@ -13,15 +13,15 @@ RSpec.describe GoogleService do
   end
 
 
-  describe '.get_diff' do
-    subject { google_service.get_diff(points) }
+  describe '.get_hilliness' do
+    subject { google_service.get_hilliness(points) }
 
     let(:google_service) { described_class.new(lat: lat, lng: lng) }
     let(:points) { google_service.get_all_elevations }
     let(:lat) { -27.507 }
     let(:lng) { 153.093 }
 
-    context 'find difference between elevations' do
+    context 'find hilliness score' do
       it { is_expected.to be }
     end
   end
