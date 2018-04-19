@@ -1,17 +1,6 @@
-/*! Place your custom styles here */
-.testimonial__image {
-  border-radius: 5px;
-}
-
 .pac-container:after {
-    /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
-
     background-image: none !important;
     height: 0px;
-}
-
-#changingTitleText {
-  font-weight: bold;
 }
 
 .home-title {
@@ -43,4 +32,20 @@ header, footer {
 
 .height-100 {
   height: 100vh;
+}
+
+.icon--lg {
+  font-size: 4.45714286em;
+}
+
+.text-block {
+  margin-bottom: 1.5em;
+}
+
+.top-marg-2-3 {
+  margin-top: 2.3em;
+}
+
+.heavy-text {
+  font-weight: 600;
 }

@@ -1,26 +1,55 @@
-section.height-100.bg--dark.text-center
-        .container.pos-vertical-center
-          .row
-            .col-sm-12
-              h1.h1--large
-                | Sorry :(
-              p.lead
-                |  Tolenno is currently in private beta. You must register to gain access
-              br
-            .col-sm-6.col-sm-offset-3
-              = form_tag 'https://www.getdrip.com/forms/640442568/submissions', data: {success: 'thanks for signing up.  you will receive an email soon with more information.', error: 'please provide an email address.', 'drip-embedded-form': '640442568' }, novalidate: true
-                .row
-                  .col-xs-12
-                    = hidden_field_tag 'headline', 'Beta Signup', data: { 'drip-attribute': 'headline' }
-                    = email_field_tag 'fields[email]', @user_email, id: 'drip-email', placeholder: 'Your email address here', class: 'validate-required validate-email'
-                  .col-xs-12
-                    = submit_tag 'Register', class: 'btn btn--primary', data: { 'drip-attribute': 'sign-up-button' }
-                    = hidden_field_tag 'b_77142ece814d3cff52058a51f_f300c9cce8', '', tabIndex: '-1'
-                  .col-xs-12
-                    span.type--fine-print
-                      | By signing up, you agree to the 
-                      a[href="#"]
-                        | Terms of Service
+section.text-center
+  .container
+    .row
+      .col-sm-6.col-md-3
+        .text-block
+          = icon('fas', 'cloud', class: 'icon icon--lg')
+          h4
+            = "#{@aqi.round(2)}/100"
+          p
+            |  air pollution rating
+      .col-sm-6.col-md-3
+        .text-block
+          = icon('fas', 'angle-up', class: 'icon icon--lg')
+          h4
+            = "#{@hill_score.round(2)}/100"
+          p
+            | hilliness rating
+      .col-sm-6.col-md-3
+        .text-block
+          = icon('fas', 'question', class: 'icon icon--lg')
+          h4
+            | Coming soon...
+          p
+            | you choose what goes here.
+      .col-sm-6.col-md-3
+        .text-block
+          = icon('fas', 'question', class: 'icon icon--lg')
+          h4
+            | Coming soon...
+          p
+            | you choose what goes here 
+
+section.text-center.top-marg-2-3
+  .container.pos-vertical-center
+    .row
+      .col-sm-12
+        h2.heavy-text
+          | Understanding the scores
+        p.lead
+          |  All scores are out of 100, and a 
+          span.heavy-text
+            | lower score is better.&nbsp;
+          | Please be aware that Tolenno is only a new startup and our scores are constantly improving. Right now they may not be 100% accurate, but we are working hard daily to make them better!
+
+section.text-center
+  .container.pos-vertical-center
+    .row
+      .col-sm-12
+        p.lead.small-text
+          | Reach out to 
+          = link_to 'hello@tolenno.com', 'mailto:hello@tolenno.com'
+          | &nbsp;with feedback or questions.
 
 
 javascript:
