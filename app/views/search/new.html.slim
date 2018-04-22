@@ -54,23 +54,9 @@ section.text-center
 
 javascript:
   analytics.page('Search');
-  
-  analytics.track('Page View', {
-    page: 'Beta Signup'
-  });
 
   analytics.track('Clicked location search', {
     search: "#{{params[:search]}}"
   });
 
-  $('form').submit(() => {
-    let id = "#{{session[:id]}}";
-    let email = $('#drip-email').val();
-    analytics.identify("#{{session[:id]}}", {
-      email: email
-    });
-    analytics.track('Clicked beta signup');
-  });
-
-  console.log("Hilliness (higher = hillier): #{{@hill_score}}%")
-  console.log("Air Quality (lower = better): #{{@aqi}}%")
+  console.log("Feedback is welcome: hello@tolenno.com");
