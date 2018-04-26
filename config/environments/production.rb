@@ -1,18 +1,18 @@
 Rails.application.configure do
 
   # MAILING
-  config.action_mailer.default_url_options = { host: ENV['WEB_HOST'] }
-  ActionMailer::Base.smtp_settings = {
-    port:         ENV['SMTP_PORT'],
-    address:      ENV['SMTP_SERVER'],
-    user_name:    ENV['SMTP_LOGIN'],
-    password:     ENV['SMTP_PASSWORD'],
-    domain:       'tolenno.com',
-    authentication: :plain,
-    ssl: true,
-    tls: true
-  }
-  ActionMailer::Base.delivery_method = :smtp
+  # config.action_mailer.default_url_options = { host: ENV['WEB_HOST'] }
+  # ActionMailer::Base.smtp_settings = {
+  #   port:         ENV['SMTP_PORT'],
+  #   address:      ENV['SMTP_SERVER'],
+  #   user_name:    ENV['SMTP_LOGIN'],
+  #   password:     ENV['SMTP_PASSWORD'],
+  #   domain:       'tolenno.com',
+  #   authentication: :plain,
+  #   ssl: true,
+  #   tls: true
+  # }
+  # ActionMailer::Base.delivery_method = :smtp
 
   # Settings specified here will take precedence over those in config/application.rb.
 

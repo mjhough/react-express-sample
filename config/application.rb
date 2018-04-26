@@ -17,6 +17,6 @@ module TolennoWeb
 
     config.autoload_paths += %W(#{config.root}/vendor) 
 
-    config.active_job.queue_adapter = :sidekiq
+    # config.active_job.queue_adapter = :sidekiq
   end
 end
