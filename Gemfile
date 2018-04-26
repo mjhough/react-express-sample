@@ -7,7 +7,7 @@ end
 
 gem 'activerecord-postgis-adapter'
 gem 'bootstrap'
-gem 'devise'
+# gem 'devise'
 # gem 'devise-async'
 gem 'dotenv-rails'
 gem 'faraday'

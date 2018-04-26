@@ -8,7 +8,7 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-require 'devise' # so we can use devise test helpers
+# require 'devise' # so we can use devise test helpers
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
@@ -22,5 +22,5 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
 
   ##### CUSTOM
-  config.include Devise::Test::ControllerHelpers, type: :controller
+  # config.include Devise::Test::ControllerHelpers, type: :controller
 end
