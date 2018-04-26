@@ -1,3 +1,3 @@
 web: bundle exec puma -C config/puma.rb
-workers: bundle exec sidekiq -C config/sidekiq.yml
-mail: mailcatcher -f
+/* workers: bundle exec sidekiq -C config/sidekiq.yml */
+/* mail: mailcatcher -f */
