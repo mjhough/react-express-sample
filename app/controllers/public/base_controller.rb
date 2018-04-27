@@ -1,7 +1,7 @@
 module Public
   class BaseController < ApplicationController
     layout 'public'
-    before_action :set_uuid
+    # before_action :set_uuid
     # before_action :check_logged_in
 
     private

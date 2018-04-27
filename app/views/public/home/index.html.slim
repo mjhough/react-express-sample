@@ -46,12 +46,3 @@ javascript:
   analytics.track('Page View', {
     page: 'Home'
   });
-
-  $('#newsletter-signup').submit(function(event) {
-    let id = "#{{session[:id]}}";
-    let email = $('#drip-email').val();
-    analytics.identify("#{{session[:id]}}", {
-      email: email
-    });
-    analytics.track('Clicked newsletter signup');
-  });
