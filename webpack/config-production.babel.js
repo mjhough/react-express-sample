@@ -4,7 +4,7 @@ import webpack from 'webpack';
 export default {
   mode: 'production',
   devtool: 'source-map',
-  entry: path.join(process.cwd(), 'src/index'),
+  entry: ['babel-polyfill', path.join(process.cwd(), 'src/index')],
   output: {
     filename: 'bundle.js',
     path: path.join(process.cwd(), 'public', 'js'),

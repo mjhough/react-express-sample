@@ -11,8 +11,7 @@ MainApp.propTypes = {
 };
 
 MainApp.defaultProps = {
-  hello: 'Hello Tolenno!',
+  hello: 'Hello World!',
 };
-
 
 render(<MainApp />, document.getElementById('app'));

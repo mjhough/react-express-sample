@@ -2,7 +2,7 @@
   "name": "tolenno-web",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:mjhough/tolenno-web.git",
+  "repository": "...",
   "author": "Matt Hough <matt@hough.tv>",
   "license": "N/A",
   "private": true,
@@ -11,6 +11,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-inline-environment-variables": "^0.4.0",
+    "babel-polyfill": "^6.26.0",
     "babel-register": "^6.26.0",
     "body-parser": "^1.18.2",
     "classnames": "^2.2.5",
@@ -46,6 +47,7 @@
     "eslint-plugin-react": "^7.7.0",
     "nodemon": "^1.17.3",
     "pre-commit": "^1.2.2",
+    "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^2.0.15"
   },
   "pre-commit": [
@@ -53,6 +55,7 @@
   ],
   "scripts": {
     "build": "NODE_ENV=production yarn env-cmd .env webpack --config ./webpack/config-production.babel.js",
+    "production": "NODE_ENV=production yarn env-cmd .env node ./server/index.js",
     "postinstall": "yarn build",
     "lint": "eslint . --ext .js,.jsx",
     "start": "babel-node ./server/index.js"

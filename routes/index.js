@@ -1,7 +1,7 @@
 import express from 'express';
 
-import apiRouter from './api';
-import publicRouter from './public';
+import apiRouter from './api-router';
+import publicRouter from './public-router';
 
 const router = express.Router();
 
