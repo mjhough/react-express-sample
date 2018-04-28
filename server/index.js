@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 // const http = require('http');
 import http from 'http';
 
